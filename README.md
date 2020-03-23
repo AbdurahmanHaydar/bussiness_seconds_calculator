@@ -12,4 +12,4 @@ http://localhost:5000/?start_time=2020-03-22T16:30:03&end_time=2020-03-27T09:40:
 
 Heroku version :
 
-https://sheltered-lake-31222.herokuapp.com/?start_time=2020-03-23T00:00:00&end_time=2020-03-27T00:00:00  
+https://thawing-stream-66060.herokuapp.com/?start_time=2020-03-23T00:00:00&end_time=2020-03-27T00:00:00  
