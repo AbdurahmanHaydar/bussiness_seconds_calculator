@@ -59,6 +59,8 @@ def all_routes(app):
 
             if end_hour < 8 :
                 end_hour = 00
+                end_minute = 00
+                end_second= 00
 
             if end_hour <= 17 and end_hour >8 :
                 end_hour =  end_hour - 8
@@ -69,7 +71,7 @@ def all_routes(app):
             end_time_bussiness = datetime.timedelta(days=0,hours=end_hour, minutes=end_minute,seconds=end_second)
             all_time_bussiness = start_time_bussiness + end_time_bussiness
 
-            
+
 
             days_to_hours = all_days * 8
             hours_to_seconds = days_to_hours * 60 * 60
