@@ -43,6 +43,19 @@ def all_routes(app):
                 start_minute = 00
                 start_second = 00
 
+            current_day = str(start_date_time_obj.year)+'-'+ (str(start_date_time_obj.month) if start_date_time_obj.month>=10 else "0"+str(start_date_time_obj.month)) +'-'+ (str(start_date_time_obj.day) if start_date_time_obj.day>=10 else "0"+str(start_date_time_obj.day))
+            if current_day in all_p_holidays or start_date_time_obj.weekday==5 or start_date_time_obj==6:
+                start_hour = 00
+                start_minute = 00
+                start_second = 00
+
+
+            current_day = str(end_date_time_obj.year)+'-'+ (str(end_date_time_obj.month) if end_date_time_obj.month>=10 else "0"+str(end_date_time_obj.month)) +'-'+ (str(end_date_time_obj.day) if end_date_time_obj.day>=10 else "0"+str(end_date_time_obj.day))
+            if current_day in all_p_holidays or end_date_time_obj.weekday==5 or end_date_time_obj==6:
+                end_hour = 00
+                end_minute = 00
+                end_second = 00
+
 
             if start_hour >= 17 :
                 current_day = str(start_date_time_obj.year)+'-'+ (str(start_date_time_obj.month) if start_date_time_obj.month>=10 else "0"+str(start_date_time_obj.month)) +'-'+ (str(start_date_time_obj.day) if start_date_time_obj.day>=10 else "0"+str(start_date_time_obj.day))
@@ -73,10 +86,10 @@ def all_routes(app):
             end_time_bussiness = datetime.timedelta(days=0,hours=end_hour, minutes=end_minute,seconds=end_second)
             all_time_bussiness = start_time_bussiness + end_time_bussiness
 
-            
 
 
-            days_to_hours = all_days * 8
+
+            days_to_hours = all_days * 9
             hours_to_seconds = days_to_hours * 60 * 60
             final_output =  int(hours_to_seconds + all_time_bussiness.total_seconds())
 
