@@ -54,6 +54,7 @@ def all_routes(app):
 
 
             if  start_hour >=8  and  start_hour <17:
+                all_days = all_days - 1
                 start_hour = 17 - start_hour
 
 
@@ -67,10 +68,12 @@ def all_routes(app):
 
 
 
+
             start_time_bussiness = datetime.timedelta(days=0,hours=start_hour, minutes=start_minute,seconds=start_second)
             end_time_bussiness = datetime.timedelta(days=0,hours=end_hour, minutes=end_minute,seconds=end_second)
             all_time_bussiness = start_time_bussiness + end_time_bussiness
 
+            
 
 
             days_to_hours = all_days * 8
